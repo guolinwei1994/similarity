@@ -2,9 +2,11 @@
 
 import cherrypy, jieba, gensim
 
-word_model = gensim.models.Word2Vec.load('/home/green/tag_model')
+cherrypy.config.update("server.conf")
 
-sent_model = gensim.models.Doc2Vec.load('/home/green/sents2vec_tag_model') 
+word_model = gensim.models.Word2Vec.load('model/tag_model')
+
+sent_model = gensim.models.Doc2Vec.load('model/sents2vec_tag_model') 
 
 class similar:
 
